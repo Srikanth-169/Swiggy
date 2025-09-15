@@ -2,10 +2,10 @@ pipeline {
   agent any
 
   environment {
-    DOCKERHUB_CRED = 'dockerhub-cred'     // Jenkins credentials ID
-    DOCKERHUB_USER = 'pavanimadhavarapu'  // Docker Hub username
+    DOCKERHUB_CRED = 'siva0927-dockerhub'     // Jenkins credentials ID
+    DOCKERHUB_USER = 'siva0927'  // Docker Hub username
     IMAGE_NAME = "${DOCKERHUB_USER}/swiggy"
-    TAG = "latest"
+    TAG = "v1"
     HOST_PORT = "8084"
     CONTAINER_PORT = "80"
   }
@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git url: 'https://github.com/pavanimadhavarapu/Swiggy.git', branch: 'master'
+        git url: 'https://github.com/siva-123-hash/Swiggy.git', branch: 'master'
       }
     }
 
